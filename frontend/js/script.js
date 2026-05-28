@@ -113,54 +113,28 @@ document
 .getElementById("result")
 .innerHTML =
 
-    "Hello " + name +
+    "<h3>Hello " + name + "</h3>" +
 
-    "<br><br>" +
+    "<p><strong>Target Role:</strong> "
+    + role + "</p>" +
 
-    "Target Role: " +
-    role +
+    "<p><strong>Readiness Score:</strong> "
+    + score + "%</p>" +
 
-    "<br><br>" +
+    "<p><strong>Status:</strong> "
+    + status + "</p>" +
 
-    document
-.getElementById("result")
-.innerHTML =
+    "<p><strong>Missing Skills:</strong></p>" +
 
-    "Hello " + name +
+    "<ul>" +
 
-    "<br><br>" +
+    missingSkills
+        .map(skill =>
+            "<li>" + skill + "</li>")
+        .join("") +
 
-    "Target Role: " +
-    role +
+    "</ul>" +
 
-    "<br><br>" +
+    "<p><strong>Learning Roadmap:</strong></p>" +
 
-    "Readiness Score: " +
-    score + "%" +
-
-    "<br><br>" +
-
-    "Status: " +
-    status +
-
-    "<br><br>" +
-
-    "Missing Skills:<br>" +
-    missingSkills.join(", ") +
-
-    "<br><br>" +
-
-    "Learning Roadmap:<br>" +
     roadmap;
-
-    "<br><br>" +
-
-    "Missing Skills:<br>" +
-    missingSkills.join(", ") +
-
-    "<br><br>" +
-
-    "Learning Roadmap:<br>" +
-    roadmap;
-    
-}
