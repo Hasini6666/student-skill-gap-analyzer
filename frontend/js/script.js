@@ -10,7 +10,8 @@ document
         document.getElementById("skills")
         .value
         .toLowerCase()
-        .split(",");
+        .split(",")
+        .map(skill => skill.trim());
 
     let role =
         document.getElementById("role")
@@ -74,7 +75,8 @@ document
 
         if (skills.includes(skill)) {
             matchedSkills++;
-        } else {
+        }
+        else {
             missingSkills.push(skill);
         }
     }
@@ -82,59 +84,63 @@ document
     let score =
         Math.round(
             (matchedSkills /
-             requiredSkills.length)
-             * 100
+                requiredSkills.length)
+            * 100
         );
+
     let roadmap = "";
 
-for (let i = 0;
-     i < missingSkills.length;
-     i++) {
+    for (let i = 0;
+         i < missingSkills.length;
+         i++) {
 
-    roadmap +=
-        "Week " +
-        (i + 1) +
-        " → Learn " +
-        missingSkills[i] +
-        "<br>";
-}
- let status = "";
+        roadmap +=
+            "Week " +
+            (i + 1) +
+            " → Learn " +
+            missingSkills[i] +
+            "<br>";
+    }
 
-if (score >= 80) {
-    status = "Job Ready";
-}
-else if (score >= 50) {
-    status = "Moderately Ready";
-}
-else {
-    status = "Needs Improvement";
-}   
-document
-.getElementById("result")
-.innerHTML =
+    let status = "";
 
-    "<h3>Hello " + name + "</h3>" +
+    if (score >= 80) {
+        status = "Job Ready";
+    }
+    else if (score >= 50) {
+        status = "Moderately Ready";
+    }
+    else {
+        status = "Needs Improvement";
+    }
 
-    "<p><strong>Target Role:</strong> "
-    + role + "</p>" +
+    document
+    .getElementById("result")
+    .innerHTML =
 
-    "<p><strong>Readiness Score:</strong> "
-    + score + "%</p>" +
+        "<h3>Hello " + name + "</h3>" +
 
-    "<p><strong>Status:</strong> "
-    + status + "</p>" +
+        "<p><strong>Target Role:</strong> "
+        + role + "</p>" +
 
-    "<p><strong>Missing Skills:</strong></p>" +
+        "<p><strong>Readiness Score:</strong> "
+        + score + "%</p>" +
 
-    "<ul>" +
+        "<p><strong>Status:</strong> "
+        + status + "</p>" +
 
-    missingSkills
-        .map(skill =>
-            "<li>" + skill + "</li>")
-        .join("") +
+        "<p><strong>Missing Skills:</strong></p>" +
 
-    "</ul>" +
+        "<ul>" +
 
-    "<p><strong>Learning Roadmap:</strong></p>" +
+        missingSkills
+            .map(skill =>
+                "<li>" + skill + "</li>")
+            .join("") +
 
-    roadmap;
+        "</ul>" +
+
+        "<p><strong>Learning Roadmap:</strong></p>" +
+
+        roadmap;
+});
