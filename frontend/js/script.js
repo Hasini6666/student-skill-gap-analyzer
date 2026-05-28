@@ -98,7 +98,31 @@ for (let i = 0;
         missingSkills[i] +
         "<br>";
 }
+ let status = "";
+
+if (score >= 80) {
+    status = "Job Ready";
+}
+else if (score >= 50) {
+    status = "Moderately Ready";
+}
+else {
+    status = "Needs Improvement";
+}   
 document
+.getElementById("result")
+.innerHTML =
+
+    "Hello " + name +
+
+    "<br><br>" +
+
+    "Target Role: " +
+    role +
+
+    "<br><br>" +
+
+    document
 .getElementById("result")
 .innerHTML =
 
@@ -113,6 +137,21 @@ document
 
     "Readiness Score: " +
     score + "%" +
+
+    "<br><br>" +
+
+    "Status: " +
+    status +
+
+    "<br><br>" +
+
+    "Missing Skills:<br>" +
+    missingSkills.join(", ") +
+
+    "<br><br>" +
+
+    "Learning Roadmap:<br>" +
+    roadmap;
 
     "<br><br>" +
 
