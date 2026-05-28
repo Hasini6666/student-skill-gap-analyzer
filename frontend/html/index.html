@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Student Skill Gap Analyzer</title>
-
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -12,18 +12,59 @@
 
         <h1>Student Skill Gap Analyzer</h1>
 
-        <p>
-            Analyze your skills and identify missing technologies
-            required for software roles.
+        <p class="subtitle">
+            Analyze your skills and discover what you need to learn
+            for your target software role.
         </p>
 
-        <button id="startButton">
-            Get Started
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name">
+
+        <input
+            type="text"
+            id="skills"
+            placeholder="Enter skills (Java, HTML, CSS)">
+
+        <select id="role">
+
+            <option value="">
+                Select Target Role
+            </option>
+
+            <option value="Java Developer">
+                Java Developer
+            </option>
+
+            <option value="Frontend Developer">
+                Frontend Developer
+            </option>
+
+            <option value="Backend Developer">
+                Backend Developer
+            </option>
+
+            <option value="Software Engineer">
+                Software Engineer
+            </option>
+
+            <option value="Machine Learning Engineer">
+                Machine Learning Engineer
+            </option>
+
+        </select>
+
+        <button id="analyzeButton">
+            Analyze Skills
         </button>
+
+        <div id="result"></div>
 
     </div>
 
     <script src="../js/script.js"></script>
 
 </body>
+
 </html>
