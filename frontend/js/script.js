@@ -85,24 +85,43 @@ document
              requiredSkills.length)
              * 100
         );
+    let roadmap = "";
 
-    document
-    .getElementById("result")
-    .innerHTML =
+for (let i = 0;
+     i < missingSkills.length;
+     i++) {
 
-        "Hello " + name +
-        "<br><br>" +
+    roadmap +=
+        "Week " +
+        (i + 1) +
+        " → Learn " +
+        missingSkills[i] +
+        "<br>";
+}
+document
+.getElementById("result")
+.innerHTML =
 
-        "Target Role: " +
-        role +
+    "Hello " + name +
 
-        "<br><br>" +
+    "<br><br>" +
 
-        "Readiness Score: "
-        + score + "%" +
+    "Target Role: " +
+    role +
 
-        "<br><br>" +
+    "<br><br>" +
 
-        "Missing Skills: <br>"
-        + missingSkills.join(", ");
-});
+    "Readiness Score: " +
+    score + "%" +
+
+    "<br><br>" +
+
+    "Missing Skills:<br>" +
+    missingSkills.join(", ") +
+
+    "<br><br>" +
+
+    "Learning Roadmap:<br>" +
+    roadmap;
+    
+}
